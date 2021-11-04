@@ -7,11 +7,29 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
+// const challenge1 = [1, 2, 3, 4, 5];
+// const newArr = [];
+// challenge1.forEach(currentValue => {
+//   currentValue++;
+//   challenge1.push(newArr);
+// })
+// console.log(challenge1);
+// console.log(newArr);
+// var fs = require('fs')
+// var logger = fs.createWriteStream("log.txt", {flags: 'a'})
+
 
 const addOne = (arr) => {
-  // Solution code here...
+  const newArray = [];
+  //logger.write(typeof(arr[index]));
+  arr.forEach(num => {
+    let sum = num++;
+    newArray.push(sum);
+  });
+  return(newArray)
 };
 
+// const numbers = [1, 2, 3, 4, 5];
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -21,7 +39,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
