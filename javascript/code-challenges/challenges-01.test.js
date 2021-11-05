@@ -22,14 +22,12 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 const addOne = (arr) => {
   const newArray = [];
   //logger.write(typeof(arr[index]));
-  arr.forEach(num => {
-    let sum = num++;
-    newArray.push(sum);
-  });
-  return(newArray)
+  arr.forEach(num => newArray.push(num + 1));
+
+  return(newArray);
 };
 
-// const numbers = [1, 2, 3, 4, 5];
+// Well this took alot of effort for something so simple
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -39,7 +37,9 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-
+  const newArray = [];
+  arr.forEach(letter => newArray.push(letter + '!'));
+  return(newArray);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,25 +51,43 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
-};
-
+  this.arr = arr;
+  const newArray = [];
+  arr.forEach(upperCase => newArray.push(upperCase.toUpperCase()));
+  return(newArray);
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
+Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and 
+followed by an "!".
 
 Then, write a function named `speaker` that takes in an array of strings and a callback function. 
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
-
+// const addExclamation = (arr) => {
+//   const newArray = [];
+//   arr.forEach(letter => newArray.push(letter + '!'));
+//   return(newArray);
+// };
+// const allUpperCase = (arr) => {
+//   this.arr = arr;
+//   const newArray = [];
+//   arr.forEach(upperCase => newArray.push(upperCase.toUpperCase()));
+//   return(newArray);
+// }
 const greeting = (word) => {
-  // Solution code here...
+  const newArray = [];
+  let upperExclamation = word.toUpperCase + '!'
+  newArray.push(upperExclamation);
 };
 
 const speaker = (words, callback) => {
-  // Solution code here...
+  const newArray = [];
+  this.callback1 = callback
+  words.forEach(func => newArray.push(func.callback1));
+  return(newArray);
 };
 
 /* ------------------------------------------------------------------------------------------------
