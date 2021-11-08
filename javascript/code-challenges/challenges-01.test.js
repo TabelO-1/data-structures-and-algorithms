@@ -24,7 +24,7 @@ const addOne = (arr) => {
   //logger.write(typeof(arr[index]));
   arr.forEach(num => newArray.push(num + 1));
 
-  return(newArray);
+  return (newArray);
 };
 
 // Well this took alot of effort for something so simple
@@ -39,7 +39,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 const addExclamation = (arr) => {
   const newArray = [];
   arr.forEach(letter => newArray.push(letter + '!'));
-  return(newArray);
+  return (newArray);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ const allUpperCase = (arr) => {
   this.arr = arr;
   const newArray = [];
   arr.forEach(upperCase => newArray.push(upperCase.toUpperCase()));
-  return(newArray);
+  return (newArray);
 }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -78,19 +78,13 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 //   return(newArray);
 // }
 const greeting = (word) => {
-  const newArray = [];
-  let upperExclamation = word.toUpperCase + '!'
-  return(upperExclamation);
-  
+  return(word.toUpperCase() + '!');
 };
 
 const speaker = (words, callback) => {
   const newArray = [];
-  this.callback = callback;
-  let yes = callback(words);
-  console.log(callback(words));
-  words.forEach(func => newArray.push(func.toUpperCase + '!'));
-  return(newArray);
+  words.forEach(func => newArray.push(func));
+  return (newArray);
 };
 
 /* ------------------------------------------------------------------------------------------------
