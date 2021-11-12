@@ -139,7 +139,15 @@ add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  const newArray = [];
+  for (let i=0; i < availableItems.length; i++) {
+  if (availableItems[i].available = true) {
+    newArray.push(availableItems[i].name)
+  } else {
+    console.log("Not getting this");
+  }
+};
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
