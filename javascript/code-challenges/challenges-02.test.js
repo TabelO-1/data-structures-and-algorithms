@@ -179,15 +179,21 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  
+   //const newArray = [];
+  // for (let i=0; i < 3; i++) {
+  //   newArray.push(arr[i].ability.name);
+  // }
+  // return newArray;
+  return arr.map(str => str.ability.name);
 };
-// console.log(snorlaxAbilities[0].ability);
+//console.log(snorlaxAbilities.abilities[2].ability.name);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
 Use the snorlaxStats data, below, for this challenge.
 
-Write a function named extractStats that, given an array of stats, uses map to return an array of objects containing the stat name and the total.
+Write a function named extractStats that, given an array of stats, uses map to return an array of objects 
+containing the stat name and the total.
 
 The total should be the sum of the effort and the baseStat.
 
@@ -226,7 +232,7 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  return arr.map(obj => ({name: obj.stat.name, total: obj.effort + obj.baseStat}));
 };
 
 /* ------------------------------------------------------------------------------------------------
