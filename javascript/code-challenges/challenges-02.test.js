@@ -135,7 +135,13 @@ const evenOdd = (arr) => {
   }
   return newArray;
 };
-
+// return arr.map(num => {
+//   if (typeof num !== 'number') {
+//     return "N/A";
+//   }
+//   return num % 2 === 0 ? "even" : "odd";
+//   return num % 2 === 1 ? "odd" : "even";
+// })
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
