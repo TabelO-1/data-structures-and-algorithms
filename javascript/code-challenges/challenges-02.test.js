@@ -14,7 +14,7 @@ Use forEach to solve this problem.
 
 const raisedToTheThird = (arr) => {
   const newArray = [];
-  arr.forEach((func) => newArray.push(Math.pow(func, 3)));
+  arr.forEach(func => newArray.push(Math.pow(func, 3)));
   return newArray;
 };
 
@@ -25,7 +25,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  return arr.map((num) => num + 1);
+  return arr.map(num => num + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ question mark character.
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  return arr.map((ques) => ques + "?");
+  return arr.map(ques => ques + "?");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ instead of a for loop.
 
 const forEachTwoToThe = (arr) => {
   const newArray = [];
-  arr.forEach((expon) => newArray.push(Math.pow(2, expon)));
+  arr.forEach(expon => newArray.push(Math.pow(2, expon)));
   return newArray;
 };
 
@@ -91,7 +91,7 @@ loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  return arr.map((expon) => Math.pow(2, expon));
+  return arr.map(expon => Math.pow(2, expon));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,7 +106,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr, index) => {
-  return arr.map((str) => str.charCodeAt(index));
+  return arr.map(str => str.charCodeAt(index));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,27 +121,27 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  const newArray = [];
-  // return arr.map(num => num % 2);
-  arr.forEach((push) => newArray.push(push));
-  for (let i = 0; i < newArray.length; i++) {
-    if (newArray[i] % 2 == 0) {
-      newArray.splice(i, 1, "even");
-    } else if (newArray[i] % 2 == 1) {
-      newArray.splice(i, 1, "odd");
-    } else {
-      newArray.splice(i, 1, "N/A");
+  // const newArray = [];
+  // // return arr.map(num => num % 2);
+  // arr.forEach((push) => newArray.push(push));
+  // for (let i = 0; i < newArray.length; i++) {
+  //   if (newArray[i] % 2 == 0) {
+  //     newArray.splice(i, 1, "even");
+  //   } else if (newArray[i] % 2 == 1) {
+  //     newArray.splice(i, 1, "odd");
+  //   } else {
+  //     newArray.splice(i, 1, "N/A");
+  //   }
+  // }
+  // return newArray;
+  return arr.map(num => {
+    if (typeof num !== "number") {
+      return "N/A";
     }
-  }
-  return newArray;
+    return num % 2 === 0 ? "even" : "odd";
+  });
 };
-// return arr.map(num => {
-//   if (typeof num !== 'number') {
-//     return "N/A";
-//   }
-//   return num % 2 === 0 ? "even" : "odd";
-//   return num % 2 === 1 ? "odd" : "even";
-// })
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
@@ -191,7 +191,7 @@ const extractAbilities = (arr) => {
   //   newArray.push(arr[i].ability.name);
   // }
   // return newArray;
-  return arr.map((str) => str.ability.name);
+  return arr.map(str => str.ability.name);
 };
 //console.log(snorlaxAbilities.abilities[2].ability.name);
 /* ------------------------------------------------------------------------------------------------
@@ -239,7 +239,7 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  return arr.map((obj) => ({
+  return arr.map(obj => ({
     name: obj.stat.name,
     total: obj.effort + obj.baseStat,
   }));
