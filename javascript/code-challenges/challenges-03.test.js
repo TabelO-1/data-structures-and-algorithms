@@ -182,13 +182,15 @@ const getCharactersWithoutChildren = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', depending on the original value.
+Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any 
+non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', 
+depending on the original value.
 
 For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  // return arr.filter(currentValue => currentValue % 2 ? "even" : "odd");
 };
 
 /* ------------------------------------------------------------------------------------------------
