@@ -107,7 +107,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  return arr.filter(obj => obj.baseStat > minBaseStat ? [obj.stat] : '');
+  return arr.filter(obj => obj.baseStat > minBaseStat);
 };
 // getBaseStatGreaterThan(snorlaxData.stats, 50) 
 // will return an array containing the 'special-defense' and 'special-attack' objects.
@@ -122,14 +122,14 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // return arr.filter(obj => obj.baseStat > minBaseStat ? [] : '');
+  return arr.filter(obj => obj.baseStat > minBaseStat).map(obj => obj.stat.name);
 };
 // console.log(snorlaxData.stats[0].stat.name);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an 
-array of all characters without children.
+Write a function named getCharactersWithoutChildren that, given the array of characters, below, 
+uses filter to return an array of all characters without children.
 ------------------------------------------------------------------------------------------------ */
 
 const characters = [
@@ -176,7 +176,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  return arr.filter(obj => !obj.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
