@@ -102,15 +102,15 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   const newArray = [];
-  for (let i = 0; i < stores.length; i++) {
-    // console.log(stores[i]);
-    for (let j = 0; j < stores[i].length; j++) {
-      let newNum = 0
-      newNum += stores[i][j]
+  for (let i = 0; i < stores[0].length; i++) {
+    let hourlyTotal = 0;
+    for (let j = 0; j < stores.length; j++) {
+      hourlyTotal += stores[j][i];
     }
+    newArray.push(hourlyTotal);
   }
-  console.log(newArray);
-};
+  return newArray;
+}; //confusing
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -203,9 +203,11 @@ const calculateProduct = (numbers) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named averageDailyTemperature that accepts a two-dimensional array representing average daily temperatures grouped week-by-week.
+Write a function named averageDailyTemperature that accepts a two-dimensional array representing average daily 
+temperatures grouped week-by-week.
 
-Calculate the average daily temperature during that entire period. Your output should be a single number. Write your function so it could accept an array with any number of weeks given to it.
+Calculate the average daily temperature during that entire period. Your output should be a single number. 
+Write your function so it could accept an array with any number of weeks given to it.
 ------------------------------------------------------------------------------------------------ */
 
 // Real daily average temperatures for Seattle, October 1-28 2017
@@ -217,7 +219,9 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let total = totalSum(weather);
+  let average = total/(weather[0].length * 4);
+  return average;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -392,7 +396,7 @@ xdescribe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should calculate and return the average temperature of the data set", () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });
